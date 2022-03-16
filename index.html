@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#f7efe7" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="apple-touch-icon" href="/pwa_zaklad.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="shortcut icon" type="image/jpg" href="pwa_zaklad.png" />
+    <title>Zadanie</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Matematický hlavolam</h1>
+      <button type="button" id="uvod" class="b">
+        Úvod a úlohy a ich riešenia
+      </button>
+    </header>
+    <section class="main">
+      <h5>Nie je to aj tak vidno, len pre validator</h5>
+      <section class="collum">
+        <h2>Čísielka na súčet</h2>
+        <div id="left"></div>
+      </section>
+      <section class="collum" id="second_right">
+        <h5>Nie je to aj tak vidno, len pre validator</h5>
+        <div id="right"></div>
+        <div id="right_g">
+          <div class="kalkulacka" id="odpovednik"></div>
+          <button type="button" id="next" class="b">Ďalšia úloha</button>
+          <button type="button" id="next_disabled" disabled>
+            Ďalšia úloha
+          </button>
+          <button type="button" id="reset" class="b">Reštart</button>
+          <button type="button" id="hint" class="b">Nápoveda</button>
+          <button type="button" id="result" class="b">Riešenie</button>
+          <button type="button" id="skip" class="b">Preskočiť príklad</button>
+        </div>
+      </section>
+    </section>
+    <div id="backdrop">
+      <div id="modal">
+        <div id="info-wrap">
+          <h3>Úvod/Popis hry*</h3>
+          <p>
+            Hra s názvom <strong>Matematický hlavolam</strong>, je logická
+            matematická hra inšpirovaná minihrou "Whack the blocks you don't
+            need", ktorá je súčasťou videohry
+            <strong>Big Brain Academy (Brain vs Brain).</strong> V danej minihre
+            je stĺpček čísiel a niektoré treba odstrániť aby zvyšok vytváral
+            požadovaný súčet. V mojej hre ide o niečo podobné, len namiesto toho
+            aby sa odstraňovali čísla navyše, tak sa berú do červeného štvorčeka
+            a tam vytvárajú súčet, ktorý je potrebný vytvoriť. <br />
+            V tejto pomerne jednoduchej no zábavnej hre si viete precvičiť
+            "matematické myslenie" a taktiež aj čítanie s porozumením.
+          </p>
+          <h3>Návod na riešenie úloh</h3>
+          <p>
+            Cieľom každého príkladu je vložiť čierne kartičky s číslami do
+            červeného štvorčeka, tak aby ich súčet hodôt sa rovnal číšlu, ktoré
+            je zadané v príklade. V tejto hre je 10 rôznych úloh, ktoré sú
+            rozdelené do 3 kategórií podľa obtiažnosti (Easy, Medium, Hard). Po
+            tom ako vložíte kartičku do štvorčeka, tak už ju odtiaľ nemôžete
+            vytiahnuť, takže si rozmyslite čo chcete robiť predtým ako to
+            spravíte. Aby ste vedeli prejsť na ďalší príklad musíte najprv
+            vyriešiť ten, na ktorom sa nachádzate. Poradie príkladov sa generuje
+            náhodne. Ak sa stratíte a neviete ako pokračovať, môžete si dať
+            pauzu a po čase sa k hre vrátiť, hra totiž ukladá progres, taktiež
+            je vždy aj možnosť daný level reštartovať, alebo si vypýtať
+            nápovedu, alebo riešenie. Ak ale ani na to nemáte náladu, je môžné
+            celý príklad preskočiť.
+          </p>
+          <h3>Riešenia príkladov:</h3>
+          <p id="results">
+            Pr.0: Riešenie je napr.: 8,2,7 <br />
+            Pr.1: Riešenie je napr.: 7,-2,3,2 <br />
+            Pr.2: Riešenie je napr.: -17,5,1,2 <br />
+            Pr.3: Riešenie je napr.: 4,1 <br />
+            Pr.4: Riešenie je napr.: 17,6,9 <br />
+            Pr.5: Riešenie je napr.: -3,-5,-2,-5,-4 <br />
+            Pr.6: Riešenie je napr.: 0,11 <br />
+            Pr.7: Riešenie je napr.: 3,9,9 <br />
+            Pr.8: Riešenie je napr.: -8,-4,0 <br />
+            Pr.9: Riešenie je napr.: -4,-3,3,2 <br />
+          </p>
+          <p id="small_print">
+            <i
+              >*Tento úvod a návod na riešenia úloh si môžete vytlačiť stlačením
+              tlačidla "Print", alebo klávesovou skratkou Ctrl+P.
+              <br />
+              Hudba je vytvorená mnou pomocou stránky
+              "https://music-grid.surge.sh/"</i
+            >
+          </p>
+        </div>
+        <button id="close-modal" type="button">Zavrieť</button>
+        <button id="printer" type="button">Print</button>
+        <button id="hudba" type="button">Zapni/Vypni Hudbu</button>
+      </div>
+    </div>
+    <audio src="./x.mp3" loop id="znelka"></audio>
+    <footer class="footer">Richard Kőrösi, ©2021</footer>
+  </body>
+</html>
